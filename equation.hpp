@@ -25,7 +25,6 @@ int is_equal(double x, double y){
 
 }
 
-
 void input(double* a, double* b, double* c){
     printf("Write down the equation in form of a*x^2 + b*x + c = 0 \n");
     scanf("%lf%lf%lf", a, b, c);
@@ -55,7 +54,6 @@ void output(struct roots* root){
             for (int i = 0; i <num_of_solutions; i++)
                 printf("\nSolution %ld is: %.3lf", i + 1, root->arr[i]);
             return;
-
     }
 }
 
@@ -90,7 +88,6 @@ void solve_quadratic_equation(double a, double b, double c, struct roots* root){
 
 void solve_linear_equation(double b, double c, struct roots* root){
     assert(!isnan(b)  && !isnan(c) && "Coefficients are NaN!");
-
 
     if (is_equal(b, 0)){
         if (is_equal(c, 0)){
