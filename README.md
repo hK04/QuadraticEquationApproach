@@ -10,3 +10,6 @@ This program meant to solve polymoial equations with form of $ax^2 + bx^2 + c = 
 `equation.hpp` - prototypes of functions
 
 `headers.hpp` - includes structures and constants
+
+# To compile 
+open bash -> `g++ main.cpp equation.hpp equation.cpp headers.hpp -o main.o`
