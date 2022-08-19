@@ -6,7 +6,7 @@
 int is_equal(double x, double y){
     assert(isfinite(x)  &&  isfinite(y) && "Coefficients are NaN!"); 
 
-    if (abs(x - y) <= THRESHOLD) //использовать fabs  (!)
+    if (fabs(x - y) <= THRESHOLD)
         return 1;
     return 0;
 
