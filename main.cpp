@@ -2,7 +2,9 @@
 #include "headers.hpp"
 
 int main(){
-    double a, b, c;
+    double a;
+    double b;
+    double c;
     struct roots root;
 
     input(&a, &b, &c); //a*x^2 + b*x + c

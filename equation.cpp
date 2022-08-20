@@ -6,9 +6,7 @@
 int is_equal(double x, double y){
     assert(isfinite(x)  &&  isfinite(y) && "Coefficients are NaN!"); 
 
-    if (fabs(x - y) <= THRESHOLD)
-        return 1;
-    return 0;
+    return (fabs(x - y) <= THRESHOLD);
 
 }
 
@@ -41,28 +39,29 @@ void output(struct roots* root){
         case TWO_SOLS:
             printf("There're two solutions");
             for (int i = 0; i < num_of_solutions; i++)
-                printf("\nSolution %ld is: %.3lf", i + 1, root->arr[i]);
+                printf("\nSolution %d is: %.3lf", i + 1, root->arr[i]);
+            return;
+
+        default:
+            printf("Something went wrong. Better luck next time\n");
+            printf("Number of solutions: %d\n", num_of_solutions);
+            for (int i = 0; i < num_of_solutions; i++)
+                printf("\nSolution %d is: %.3lf", i + 1, root->arr[i]);
             return;
     }
 }
 
-double computate_discriminant (double a, double b, double c){
-    assert(isfinite(a) && isfinite(b)  && isfinite(c) && "Coefficients are NaN!");
-
-    return (b * b - 4 * a * c);
-}
-
 void solve_quadratic_equation(double a, double b, double c, struct roots* root){
-    assert(isfinite(a) && "Infinite Number");
-    assert(isfinite(b) && "Infinite Number");
-    assert(isfinite(c) && "Infinite Number");
+    assert(isfinite(a) && isfinite(b)  && isfinite(c) && "Coefficients are NaN!");
     assert(!is_equal(a, 0) && "Not a quadratic equation"); 
+    assert(root != NULL && "Pointer to Solutions is NULL");
 
-    double D = computate_discriminant(a, b, c);
+    double D = b * b - 4 * a * c;
+    double sqrt_D = sqrt(D);
 
     if (is_equal(D, 0)){
         root->num_of_roots = ONE_SOLS; //one solution
-        root->arr[0] = - 1 * b / (2 * a);
+        root->arr[0] = -(b) / (2 * a);
         return;
     } 
     if (D < 0){
@@ -71,13 +70,15 @@ void solve_quadratic_equation(double a, double b, double c, struct roots* root){
     }
 
     root->num_of_roots = TWO_SOLS; //two solutions
-    root->arr[0] = (- 1 * b - sqrt(D))/ (2 * a);
-    root->arr[1] = (- 1 * b + sqrt(D))/ (2 * a);
+    root->arr[0] = -(b + sqrt_D) / (2 * a);
+    root->arr[1] = -(b - sqrt_D) / (2 * a);
     return;
 }
 
 void solve_linear_equation(double b, double c, struct roots* root){
     assert(isfinite(b) && isfinite(c) && "Coefficients are NaN!");
+    assert(root != NULL && "Pointer to Solutions is NULL");
+
     if (is_equal(b, 0)){
         if (is_equal(c, 0)){
             root->num_of_roots = INFINITE_SOLS; //infinite number of solutions
@@ -91,7 +92,7 @@ void solve_linear_equation(double b, double c, struct roots* root){
     assert(!is_equal(b, 0) && "Not a linear equation"); 
 
     root->num_of_roots = 1;
-    root->arr[0] = -1 * c / b;
+    root->arr[0] = -(c) / b;
     return;
 }
 
