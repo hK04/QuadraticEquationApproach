@@ -7,8 +7,8 @@ struct roots{
 
 enum ExitStatus{
    INFINITE_SOLS = -1,
-   ZERO_SOLS = 0,
-   ONE_SOLS = 1,
-   TWO_SOLS = 2
+   ZERO_SOLS     =  0,
+   ONE_SOLS      =  1,
+   TWO_SOLS      =  2
 
 };

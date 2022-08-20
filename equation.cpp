@@ -6,7 +6,7 @@
 int is_equal(double x, double y){
     assert(isfinite(x)  &&  isfinite(y) && "Coefficients are NaN!"); 
 
-    return (fabs(x - y) <= THRESHOLD);
+    return fabs(x - y) <= THRESHOLD;
 
 }
 
@@ -57,7 +57,6 @@ void solve_quadratic_equation(double a, double b, double c, struct roots* root){
     assert(root != NULL && "Pointer to Solutions is NULL");
 
     double D = b * b - 4 * a * c;
-    double sqrt_D = sqrt(D);
 
     if (is_equal(D, 0)){
         root->num_of_roots = ONE_SOLS; //one solution
@@ -68,6 +67,8 @@ void solve_quadratic_equation(double a, double b, double c, struct roots* root){
         root->num_of_roots = ZERO_SOLS; //no solutions 
         return; 
     }
+
+    double sqrt_D = sqrt(D);
 
     root->num_of_roots = TWO_SOLS; //two solutions
     root->arr[0] = -(b + sqrt_D) / (2 * a);

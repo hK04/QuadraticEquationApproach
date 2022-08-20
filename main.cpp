@@ -1,10 +1,11 @@
 #include "equation.hpp"
 #include "headers.hpp"
 
+#include <math.h>
+
 int main(){
-    double a;
-    double b;
-    double c;
+    double a, b, c;
+    a = b = c = NAN;
     struct roots root;
 
     input(&a, &b, &c); //a*x^2 + b*x + c
