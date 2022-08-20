@@ -1,4 +1,4 @@
-const double THRESHOLD = 1e-7; //delta neighborhood of equality
+const double THRESHOLD = 1e-7; //delta neighbourhood of equality
 
 struct roots{
     int num_of_roots;
@@ -6,8 +6,8 @@ struct roots{
 };
 
 enum ExitStatus{
-   INFINITE_SOLS =  -1,
-   ZERO_SOLS = 0, 
+   INFINITE_SOLS = -1,
+   ZERO_SOLS = 0,
    ONE_SOLS = 1,
    TWO_SOLS = 2
 
