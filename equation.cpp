@@ -60,7 +60,7 @@ void solve_quadratic_equation(double a, double b, double c, struct roots* root){
 
     if (is_equal(D, 0)){
         root->num_of_roots = ONE_SOLS; //one solution
-        root->arr[0] = -(b) / (2 * a);
+        root->arr[0] = -b / (2 * a);
         return;
     } 
     if (D < 0){
@@ -93,7 +93,7 @@ void solve_linear_equation(double b, double c, struct roots* root){
     assert(!is_equal(b, 0) && "Not a linear equation"); 
 
     root->num_of_roots = 1;
-    root->arr[0] = -(c) / b;
+    root->arr[0] = -c / b;
     return;
 }
 
