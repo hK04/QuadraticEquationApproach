@@ -23,6 +23,7 @@
 *   You may download program on my Github
 *   <a href="https://github.com/hK04/QuadraticEquationApproach">->Github</a> 
 */
+
 #include "equation.hpp"
 #include "headers.hpp"
 
