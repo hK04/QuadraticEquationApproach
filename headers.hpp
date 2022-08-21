@@ -1,7 +1,7 @@
 /// \file
 
 
-///This variable is threshold of equality
+///This variable is the threshold of equality
 const double THRESHOLD = 1e-7; //delta neighbourhood of equality
 
 /** \struct roots
