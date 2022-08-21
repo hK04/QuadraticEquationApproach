@@ -11,5 +11,7 @@ This program meant to solve polymoial equations with form of $ax^2 + bx^2 + c = 
 
 `headers.hpp` - includes structures and constants
 
-# To compile 
+# To compile:
 open bash -> `g++ main.cpp equation.hpp equation.cpp headers.hpp -o main.o`
+# To use documentation:
+open bash -> `doxygen dox`, then open some of `.html`
