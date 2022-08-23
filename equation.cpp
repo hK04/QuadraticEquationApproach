@@ -4,6 +4,8 @@
 #include <math.h>
 #include <assert.h>
 
+#include "headers.hpp"
+
 int is_equal(double x, double y){
     assert(isfinite(x)  &&  isfinite(y) && "Coefficients are NaN!"); 
 
