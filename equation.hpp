@@ -1,6 +1,6 @@
 /// \file
 
-void input(double* a, double* b, double* c);
+#include "headers.hpp"
 
 /**
 *   @brief This function allows us to set values of a, b and c
@@ -11,7 +11,7 @@ void input(double* a, double* b, double* c);
 *
 */
 
-void output(struct roots* root);
+void input(double* a, double* b, double* c);
 
 /**
 *   @brief This function allows us to print solution of equation in console
@@ -20,7 +20,7 @@ void output(struct roots* root);
 *
 */
 
-int is_equal(double x, double y);
+void output(roots* root);
 
 /**
 *   @brief function what finds difference between x and y and return 1 if it's <= than Threshold
@@ -32,7 +32,7 @@ int is_equal(double x, double y);
 *
 */
 
-void solve_quadratic_equation(double a, double b, double c, struct roots* root);
+int is_equal(double x, double y);
 
 /**
 *   @brief function what solves the equation when a != 0
@@ -44,7 +44,7 @@ void solve_quadratic_equation(double a, double b, double c, struct roots* root);
 *
 */
 
-void solve_linear_equation(double b, double c, struct roots* root);
+void solve_quadratic_equation(double a, double b, double c, roots* root);
 
 /**
 *   @brief function what solves the equation when a == 0
@@ -55,7 +55,7 @@ void solve_linear_equation(double b, double c, struct roots* root);
 *
 */
 
-void solve_equation(double a, double b, double c, struct roots* root);
+void solve_linear_equation(double b, double c, roots* root);
 
 /**
 *   @brief function what solves the equation in dependece with coefficients 
@@ -66,3 +66,6 @@ void solve_equation(double a, double b, double c, struct roots* root);
 *   @param[in] root is a structure of solution
 *
 */
+
+void solve_equation(double a, double b, double c, roots* root);
+

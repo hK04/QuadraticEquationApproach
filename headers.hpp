@@ -8,10 +8,10 @@ const double THRESHOLD = 1e-7;
 *
 */
 
-struct roots{
+typedef struct{
     int num_of_roots;
     double arr[2];
-};
+} roots;
 
 /** \enum ExitStatus 
 *   @brief  Enum meant to treat different types of exits in solution

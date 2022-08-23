@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
-#include "headers.hpp"
 
 int is_equal(double x, double y){
     assert(isfinite(x)  &&  isfinite(y) && "Coefficients are NaN!"); 
@@ -19,7 +18,7 @@ void input(double* a, double* b, double* c){
     scanf("%lf%lf%lf", a, b, c);
 }
 
-void output(struct roots* root){
+void output(roots* root){
     assert(root != NULL && "Pointer to Solutions is NULL");
 
     int num_of_solutions = root->num_of_roots;
@@ -53,7 +52,7 @@ void output(struct roots* root){
     }
 }
 
-void solve_quadratic_equation(double a, double b, double c, struct roots* root){
+void solve_quadratic_equation(double a, double b, double c, roots* root){
     assert(isfinite(a) && isfinite(b)  && isfinite(c) && "Coefficients are NaN!");
     assert(!is_equal(a, 0) && "Not a quadratic equation"); 
     assert(root != NULL && "Pointer to Solutions is NULL");
@@ -78,7 +77,7 @@ void solve_quadratic_equation(double a, double b, double c, struct roots* root){
     return;
 }
 
-void solve_linear_equation(double b, double c, struct roots* root){
+void solve_linear_equation(double b, double c, roots* root){
     assert(isfinite(b) && isfinite(c) && "Coefficients are NaN!");
     assert(root != NULL && "Pointer to Solutions is NULL");
 
@@ -99,15 +98,13 @@ void solve_linear_equation(double b, double c, struct roots* root){
     return;
 }
 
-void solve_equation(double a, double b, double c, struct roots* root){
+void solve_equation(double a, double b, double c, roots* root){
     assert(isfinite(a) && isfinite(b)  && isfinite(c) && "Coefficients are NaN!");
     assert(root != NULL && "Pointer to Solutions is NULL");
 
     if (is_equal(a, 0)){
         solve_linear_equation(b, c, root);
-        return;
     } else {
         solve_quadratic_equation(a, b, c, root);
-        return;
     }
 }
