@@ -3,6 +3,17 @@
 #include "headers.hpp"
 
 /**
+*   @brief function what fixes -0.0000 to 0
+*
+*   @param[in] x is a value of first coefficient 
+*   @param[out] x if x != -0.0000
+*   @param[out] 0 if x == -0.0000
+*
+*/
+
+double minus_zero(double x);
+
+/**
 *   @brief This function allows us to set values of a, b and c of ax^2 + bx + c
 *
 *   @param[in] a is a value of first coefficient 
@@ -41,17 +52,6 @@ int is_equal(double x, double y);
 *   @param[in] b is a value of second coefficient 
 *   @param[in] c is a value of third coefficient
 *   @param[in] root is a structure of solution
-*
-*/
-
-double minus_zero(double x);
-
-/**
-*   @brief function what fixes -0.0000 to 0
-*
-*   @param[in] x is a value of first coefficient 
-*   @param[out] x if x != -0.0000
-*   @param[out] 0 if x == -0.0000
 *
 */
 
