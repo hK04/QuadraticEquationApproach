@@ -13,6 +13,14 @@ int is_equal(double x, double y){
 
 }
 
+double minus_zero(double x){
+    assert(isfinite(x) && "Solution is NaN!"); 
+    if (x == -0)
+        return 0;
+    else
+        return x;
+}
+
 void input(double* a, double* b, double* c){
     assert(a != NULL && b != NULL && c != NULL && "Pointer to value is NULL");
 
@@ -36,13 +44,17 @@ void output(roots* root){
 
         case ONE_SOLS:
             printf("There's one solution"); 
+
+            root->arr[0] = minus_zero(root->arr[0]);
             printf("\nSolution is: %.3lf", root->arr[0]);
             return;
 
         case TWO_SOLS:
             printf("There're two solutions");
-            for (int i = 0; i < num_of_solutions; i++)
+            for (int i = 0; i < num_of_solutions; i++){
+                root->arr[i] = minus_zero(root->arr[i]);
                 printf("\nSolution %d is: %.3lf", i + 1, root->arr[i]);
+            }
             return;
 
         default:
