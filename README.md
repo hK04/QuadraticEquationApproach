@@ -11,7 +11,7 @@ This program meant to solve polymoial equations with form of $ax^2 + bx^2 + c = 
 
 `headers.hpp` - includes structures and constants
 
-'unit_tests.cpp' - functions meant to test all methods in `equation.cpp`
+`unit_tests.cpp` - functions meant to test all methods in `equation.cpp`
 
 `unit_tests.hpp` - prototypes of unit_tests 
 
