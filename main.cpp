@@ -39,8 +39,3 @@ int main(){
 
     return 0;
 }
-//make file
-//условная прекомпилляция debug release mode
-//юнит-тесты 
-//линковка
-//объектник 
