@@ -28,8 +28,6 @@
 
 #include <math.h>
 
-
-
 int main(){
     double a, b, c;
     a = b = c = NAN;
