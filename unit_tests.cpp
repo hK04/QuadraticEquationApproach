@@ -64,15 +64,16 @@ int test_of_is_equal(int numTest, double x, double y, int right){
 
     int equality = 0;
     equality = is_equal(x, y);
-
-    if (equality != right){
-        printf("Test %d failed: x = %lg, y = %lg; Solution: %d - Should be: %d\n", numTest, x, y, equality, right);
-        
-        return 0;
-    } else {
+    
+    if (equality == right){
         printf("Test %d is succed\n", numTest);
 
         return 1;
+    } else {
+
+        printf("Test %d failed: x = %lg, y = %lg; Solution: %d - Should be: %d\n", numTest, x, y, equality, right);
+        
+        return 0;
     }
 }
 
@@ -89,6 +90,7 @@ int Test(){
     if (test_of_polynomial_equation(__LINE__, 0,  0, 13,  0,  0,  0) == 0) failed++;
     if (test_of_polynomial_equation(__LINE__, 1, -1,  3,  0,  0,  0) == 0) failed++;
     if (test_of_polynomial_equation(__LINE__, 1,  4,  4,  1, -2,  0) == 0) failed++;
+    if (test_of_polynomial_equation(__LINE__, 4,  4,  1,  1, -0.5,  0) == 0) failed++;
 
     printf("\nTest of linear function\n");
 
@@ -105,8 +107,8 @@ int Test(){
     printf("\nTest of is_equal\n");
 
     if (test_of_is_equal(__LINE__, 0,  0,  1) == 0) failed++;
-    if (test_of_linear(__LINE__, 7,  10,  0) == 0) failed++;
-    if (test_of_linear(__LINE__, 8,  9,  1) == 0) failed++;
+    if (test_of_is_equal(__LINE__, 7,  7,  0) == 0) failed++;
+    if (test_of_is_equal(__LINE__, 8,  9,  1) == 0) failed++;
 
     return failed;
 }
