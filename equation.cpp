@@ -100,7 +100,7 @@ void solve_linear_equation(double b, double c, roots* root){
     return;
 }
 
-void solve_equation(double a, double b, double c, roots* root){
+void solve_polynomial_equation(double a, double b, double c, roots* root);{
     assert(isfinite(a) && isfinite(b)  && isfinite(c) && "Coefficients are NaN!");
     assert(root != NULL && "Pointer to Solutions is NULL");
 

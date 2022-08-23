@@ -3,7 +3,7 @@
 #include "headers.hpp"
 
 /**
-*   @brief This function allows us to set values of a, b and c
+*   @brief This function allows us to set values of a, b and c of ax^2 + bx + c
 *
 *   @param[in] a is a value of first coefficient 
 *   @param[in] b is a value of second coefficient 
@@ -35,7 +35,7 @@ void output(roots* root);
 int is_equal(double x, double y);
 
 /**
-*   @brief function what solves the equation when a != 0
+*   @brief function what solves the equation in form ax^2 + bx + c = 0
 *
 *   @param[in] a is a value of first coefficient 
 *   @param[in] b is a value of second coefficient 
@@ -47,10 +47,10 @@ int is_equal(double x, double y);
 void solve_quadratic_equation(double a, double b, double c, roots* root);
 
 /**
-*   @brief function what solves the equation when a == 0
+*   @brief function what solves the equation in form bx + c = 0
 *
-*   @param[in] b is a value of second coefficient 
-*   @param[in] c is a value of third coefficient
+*   @param[in] b is a value of first coefficient 
+*   @param[in] c is a value of second coefficient
 *   @param[in] root is a structure of solution
 *
 */
@@ -58,7 +58,7 @@ void solve_quadratic_equation(double a, double b, double c, roots* root);
 void solve_linear_equation(double b, double c, roots* root);
 
 /**
-*   @brief function what solves the equation in dependece with coefficients 
+*   @brief function what solves the polynomial equation in dependece with coefficients 
 *
 *   @param[in] a is a value of first coefficient 
 *   @param[in] b is a value of second coefficient 
@@ -67,5 +67,5 @@ void solve_linear_equation(double b, double c, roots* root);
 *
 */
 
-void solve_equation(double a, double b, double c, roots* root);
+void solve_polynomial_equation(double a, double b, double c, roots* root);
 
