@@ -15,6 +15,7 @@ int is_equal(double x, double y){
 
 double minus_zero(double x){
     assert(isfinite(x) && "Solution is NaN!"); 
+    
     if (x == -0)
         return 0;
     else

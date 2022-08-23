@@ -24,7 +24,10 @@
 *   <a href="https://github.com/hK04/QuadraticEquationApproach">->Github</a> 
 */
 
+#define DebugMode
+
 #include "equation.hpp"
+#include "unit_tests.hpp"
 
 #include <math.h>
 
@@ -33,9 +36,15 @@ int main(){
     a = b = c = NAN;
     roots root;
 
+#ifdef DebugMode
+    Test();
+#else
+
     input(&a, &b, &c); //a*x^2 + b*x + c
     solve_polynomial_equation(a, b, c, &root);
     output(&root);
+
+#endif
 
     return 0;
 }

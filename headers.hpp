@@ -10,7 +10,7 @@ const double THRESHOLD = 1e-7;
 
 typedef struct{
     int num_of_roots;
-    double arr[2];
+    double arr[2] = {0};
 } roots;
 
 /** \enum ExitStatus 
