@@ -35,6 +35,7 @@ int main(){
     roots root;
 
 #if DebugMode == 1
+
     Test();
 #else
 
