@@ -1,5 +1,5 @@
 # QuadraticEquationApproach
-First approach to developing at University
+First approach to developing at MIPT 
 
 This program meant to solve polymoial equations with form of $ax^2 + bx^2 + c = 0$
 
