@@ -24,8 +24,6 @@
 *   <a href="https://github.com/hK04/QuadraticEquationApproach">->Github</a> 
 */
 
-#define DebugMode
-
 #include "equation.hpp"
 #include "unit_tests.hpp"
 
@@ -36,7 +34,7 @@ int main(){
     a = b = c = NAN;
     roots root;
 
-#ifdef DebugMode
+#if DebugMode == 1
     Test();
 #else
 
