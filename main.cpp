@@ -19,6 +19,18 @@
 */
 
 /**
+*   @page compiling How to compile?
+*   To compile this code you need to make Makefile downloaded from repository:
+*
+*   'cd QuadraticEquationApproach/'
+*
+*   To make usual version just 'make'
+*
+*   To make debug version - 'make debug'
+*
+*/
+
+/**
 *   @page Downloading Where to download?
 *   You may download program on my Github
 *   <a href="https://github.com/hK04/QuadraticEquationApproach">->Github</a> 
@@ -30,20 +42,20 @@
 #include <math.h>
 
 int main(){
-    double a, b, c;
-    a = b = c = NAN;
-    roots root;
 
 #if DebugMode == 1
 
-    Test();
+    run_test();
 #else
 
+    double a = NAN, b = NAN, c = NAN;
+    roots root;
+    
     input(&a, &b, &c); //a*x^2 + b*x + c
     solve_polynomial_equation(a, b, c, &root);
     output(&root);
 
-#endif
+#endif //DebugMode
 
     return 0;
 }

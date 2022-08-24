@@ -7,23 +7,26 @@
 #include "headers.hpp"
 
 int is_equal(double x, double y){
-    assert(isfinite(x)  &&  isfinite(y) && "Coefficients are NaN!"); 
+    assert(isfinite(x) && "Coefficient isnt finite!");
+    assert(isfinite(y) && "Coefficient isnt finite!"); 
 
-    return fabs(x - y) <= THRESHOLD;
+    return fabs(x - y) <= DELTA;
 
 }
 
-double minus_zero(double x){
+double minus_zero_to_zero(double x){
     assert(isfinite(x) && "Solution is NaN!"); 
     
-    if (x == -0)
+    if (is_equal(x, 0))
         return 0;
     else
         return x;
 }
 
 void input(double* a, double* b, double* c){
-    assert(a != NULL && b != NULL && c != NULL && "Pointer to value is NULL");
+    assert(a != NULL && "Pointer to value is NULL");
+    assert(b != NULL && "Pointer to value is NULL");
+    assert(c != NULL && "Pointer to value is NULL");
 
     printf("Write down the equation in form of a*x^2 + b*x + c = 0 \n");
     scanf("%lf%lf%lf", a, b, c);
@@ -36,24 +39,21 @@ void output(roots* root){
 
     switch (num_of_solutions){
         case INFINITE_SOLS:
-            printf("Infinite number of solutions");
+            printf("\x1b[31m Infinite number of solutions \x1b[0m");
             return;
 
         case ZERO_SOLS:
-            printf("No solution");
+            printf("\x1b[31m No solution \x1b[0m");
             return;
 
         case ONE_SOLS:
-            printf("There's one solution"); 
-
-            root->arr[0] = minus_zero(root->arr[0]);
+            printf("\x1b[33m There's one solution \x1b[0m"); 
             printf("\nSolution is: %.3lf", root->arr[0]);
             return;
 
         case TWO_SOLS:
-            printf("There're two solutions");
+            printf("\x1b[32m There're two solutions \x1b[0m");
             for (int i = 0; i < num_of_solutions; i++){
-                root->arr[i] = minus_zero(root->arr[i]);
                 printf("\nSolution %d is: %.3lf", i + 1, root->arr[i]);
             }
             return;
@@ -68,7 +68,10 @@ void output(roots* root){
 }
 
 void solve_quadratic_equation(double a, double b, double c, roots* root){
-    assert(isfinite(a) && isfinite(b)  && isfinite(c) && "Coefficients are NaN!");
+    assert(isfinite(a) && "Coefficient isnt finite!");
+    assert(isfinite(b) && "Coefficient isnt finite!");
+    assert(isfinite(c) && "Coefficient isnt finite!");
+
     assert(!is_equal(a, 0) && "Not a quadratic equation"); 
     assert(root != NULL && "Pointer to Solutions is NULL");
 
@@ -89,11 +92,14 @@ void solve_quadratic_equation(double a, double b, double c, roots* root){
     root->num_of_roots = TWO_SOLS; //two solutions
     root->arr[0] = -(b + sqrt_D) / (2 * a);
     root->arr[1] = -(b - sqrt_D) / (2 * a);
+    root->arr[0] = minus_zero_to_zero(root->arr[0]);
+    root->arr[1] = minus_zero_to_zero(root->arr[1]);
     return;
 }
 
 void solve_linear_equation(double b, double c, roots* root){
-    assert(isfinite(b) && isfinite(c) && "Coefficients are NaN!");
+    assert(isfinite(b) && "Coefficient isnt finite!");
+    assert(isfinite(c) && "Coefficient isnt finite!");
     assert(root != NULL && "Pointer to Solutions is NULL");
 
     if (is_equal(b, 0)){
@@ -110,11 +116,14 @@ void solve_linear_equation(double b, double c, roots* root){
 
     root->num_of_roots = 1;
     root->arr[0] = -c / b;
+    root->arr[0] = minus_zero_to_zero(root->arr[0]);
     return;
 }
 
 void solve_polynomial_equation(double a, double b, double c, roots* root){
-    assert(isfinite(a) && isfinite(b)  && isfinite(c) && "Coefficients are NaN!");
+    assert(isfinite(a) && "Coefficient isnt finite!");
+    assert(isfinite(b) && "Coefficient isnt finite!");
+    assert(isfinite(c) && "Coefficient isnt finite!");
     assert(root != NULL && "Pointer to Solutions is NULL");
 
     if (is_equal(a, 0)){

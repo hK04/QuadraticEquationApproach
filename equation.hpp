@@ -11,7 +11,7 @@
 *
 */
 
-double minus_zero(double x);
+double minus_zero_to_zero(double x);
 
 /**
 *   @brief This function allows us to set values of a, b and c of ax^2 + bx + c
@@ -40,6 +40,8 @@ void output(roots* root);
 *   @param[in] y is a second value
 *   @param[out] 1 - values are nearly equal
 *   @param[out] 0 - values are not nearly equal
+*
+*   @return description of the return value
 *
 */
 
