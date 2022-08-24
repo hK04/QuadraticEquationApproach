@@ -11,7 +11,7 @@
 *
 */
 
-double minus_zero_to_zero(double x);
+double minus_zero_to_zero(const double x);
 
 /**
 *   @brief This function allows us to set values of a, b and c of ax^2 + bx + c
@@ -45,7 +45,7 @@ void output(roots* root);
 *
 */
 
-int is_equal(double x, double y);
+int is_equal(const double x, const double y);
 
 /**
 *   @brief function what solves the equation in form ax^2 + bx + c = 0
@@ -80,5 +80,5 @@ void solve_linear_equation(double b, double c, roots* root);
 *
 */
 
-void solve_polynomial_equation(double a, double b, double c, roots* root);
+void solve_polynomial_equation(const double a, const double b, const double c, roots* root);
 

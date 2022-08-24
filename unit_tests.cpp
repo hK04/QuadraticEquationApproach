@@ -17,18 +17,18 @@ int test_of_polynomial_equation(int numTest, double a, double b, double c, int n
     solve_polynomial_equation(a, b, c, &root);
 
     if (root.num_of_roots != num_of_roots){
-        printf("Test %d failed: a = %lg, b = %lg, c = %lg; Solutions: %lg %lg - Should be: %lg %lg\n", 
+        printf("\x1b[31mTest %d failed: a = %lg, b = %lg, c = %lg; Solutions: %lg %lg - Should be: %lg %lg\x1b[0m\n", 
             numTest, a, b, c, root.arr[0], root.arr[1], x_1_correct, x_2_correct);
 
         return 0;
     } else {
         if (!is_equal(root.arr[0], x_1_correct) || !is_equal(root.arr[1], x_2_correct)){
-            printf("Test %d failed: a = %lg, b = %lg, c = %lg; Solutions: %lg %lg - Should be: %lg %lg\n", 
+            printf("\x1b[31mTest %d failed: a = %lg, b = %lg, c = %lg; Solutions: %lg %lg - Should be: %lg %lg\x1b[0m\n", 
                 numTest, a, b, c, root.arr[0], root.arr[1], x_1_correct, x_2_correct);
 
             return 0;
         } else {
-            printf("Test %d is succed\n", numTest);
+            printf("\x1b[32mTest %d is succed\x1b[0m\n", numTest);
             
             return 1;
         }
@@ -44,18 +44,18 @@ int test_of_linear(int numTest, double b, double c, double x_correct){
     solve_linear_equation(b, c, &root);
 
     if (root.num_of_roots != 1){
-        printf("Test %d failed: b = %lg, c = %lg; Solution: %lg - Should be: %lg\n", 
+        printf("\x1b[31mTest %d failed: b = %lg, c = %lg; Solution: %lg - Should be: %lg\x1b[0m\n", 
             numTest, b, c, root.arr[0], x_correct);
 
         return 0;
     } else {
         if (!is_equal(root.arr[0], x_correct)){
-            printf("Test %d failed: b = %lg, c = %lg; Solution: %lg - Should be: %lg\n", 
+            printf("\x1b[31mTest %d failed: b = %lg, c = %lg; Solution: %lg - Should be: %lg\x1b[0m\n", 
                 numTest, b, c, root.arr[0], x_correct);
 
             return 0;
         } else {
-            printf("Test %d is succed\n", numTest);
+            printf("\x1b[32mTest %d is succed\x1b[0m\n", numTest);
             return 1;
         }
     }
@@ -76,12 +76,12 @@ int test_of_is_equal(int numTest, double x, double y, int correct){
     equality = is_equal(x, y);
     
     if (equality == correct){
-        printf("Test %d is succed\n", numTest);
+        printf("\x1b[32mTest %d is succed\n", numTest);
 
         return 1;
     } else {
 
-        printf("Test %d failed: x = %lg, y = %lg; Solution: %d - Should be: %d\n", 
+        printf("\x1b[31mTest %d failed: x = %lg, y = %lg; Solution: %d - Should be: %d\x1b[0m\n", 
             numTest, x, y, equality, correct);
         
         return 0;

@@ -6,7 +6,7 @@
 
 #include "headers.hpp"
 
-int is_equal(double x, double y){
+int is_equal(const double x, const double y){
     assert(isfinite(x) && "Coefficient isnt finite!");
     assert(isfinite(y) && "Coefficient isnt finite!"); 
 
@@ -14,7 +14,7 @@ int is_equal(double x, double y){
 
 }
 
-double minus_zero_to_zero(double x){
+double minus_zero_to_zero(const double x){
     assert(isfinite(x) && "Solution is NaN!"); 
     
     if (is_equal(x, 0))
@@ -39,20 +39,20 @@ void output(roots* root){
 
     switch (num_of_solutions){
         case INFINITE_SOLS:
-            printf("\x1b[31m Infinite number of solutions \x1b[0m");
+            printf("\x1b[31mInfinite number of solutions\x1b[0m\n");
             return;
 
         case ZERO_SOLS:
-            printf("\x1b[31m No solution \x1b[0m");
+            printf("\x1b[31mNo solution\x1b[0m\n");
             return;
 
         case ONE_SOLS:
-            printf("\x1b[33m There's one solution \x1b[0m"); 
+            printf("\x1b[33mThere's one solution\x1b[0m"); 
             printf("\nSolution is: %.3lf", root->arr[0]);
             return;
 
         case TWO_SOLS:
-            printf("\x1b[32m There're two solutions \x1b[0m");
+            printf("\x1b[32mThere're two solutions\x1b[0m");
             for (int i = 0; i < num_of_solutions; i++){
                 printf("\nSolution %d is: %.3lf", i + 1, root->arr[i]);
             }
@@ -67,7 +67,7 @@ void output(roots* root){
     }
 }
 
-void solve_quadratic_equation(double a, double b, double c, roots* root){
+void solve_quadratic_equation(const double a, const double b, const double c, roots* root){
     assert(isfinite(a) && "Coefficient isnt finite!");
     assert(isfinite(b) && "Coefficient isnt finite!");
     assert(isfinite(c) && "Coefficient isnt finite!");
@@ -97,7 +97,7 @@ void solve_quadratic_equation(double a, double b, double c, roots* root){
     return;
 }
 
-void solve_linear_equation(double b, double c, roots* root){
+void solve_linear_equation(const double b, const double c, roots* root){
     assert(isfinite(b) && "Coefficient isnt finite!");
     assert(isfinite(c) && "Coefficient isnt finite!");
     assert(root != NULL && "Pointer to Solutions is NULL");
@@ -120,7 +120,7 @@ void solve_linear_equation(double b, double c, roots* root){
     return;
 }
 
-void solve_polynomial_equation(double a, double b, double c, roots* root){
+void solve_polynomial_equation(const double a, const double b, const double c, roots* root){
     assert(isfinite(a) && "Coefficient isnt finite!");
     assert(isfinite(b) && "Coefficient isnt finite!");
     assert(isfinite(c) && "Coefficient isnt finite!");

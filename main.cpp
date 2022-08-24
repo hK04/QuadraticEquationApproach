@@ -20,14 +20,25 @@
 
 /**
 *   @page compiling How to compile?
-*   To compile this code you need to make Makefile downloaded from repository:
+*   @section comp1 To compile without debug:
 *
-*   'cd QuadraticEquationApproach/'
+*   git clone https://github.com/hK04/QuadraticEquationApproach
 *
-*   To make usual version just 'make'
+*   cd QuadraticEquationApproach
 *
-*   To make debug version - 'make debug'
+*   make
 *
+*   ./main # executable file
+*
+*   @section comp2 To compile with debug:
+*
+*   git clone https://github.com/hK04/QuadraticEquationApproach
+*
+*   cd QuadraticEquationApproach
+*
+*   make debug
+*
+*   ./main # executable file
 */
 
 /**
