@@ -15,8 +15,29 @@ This program meant to solve polynomial equations with form of $ax^2 + bx^2 + c =
 
 `unit_tests.hpp` - includes prototypes of unit_tests 
 
-# To compile:
-```cd QuadraticEquationApproach/``` to make usual version: ```make``` to make debug version  ```make debug```
+# To compile WITHOUT debug:
+```bash
+git clone https://github.com/hK04/QuadraticEquationApproach
+cd QuadraticEquationApproach
+make
+./main # executable file
+```
+
+# To compile WITH debug:
+
+```bash
+git clone https://github.com/hK04/QuadraticEquationApproach
+cd QuadraticEquationApproach
+make debug
+./main # executable file
+```
 
 # To use documentation:
-```cd QuadraticEquationApproach/```, ```doxygen dox```, then open some of ```.html```
+
+```bash
+git clone https://github.com/hK04/QuadraticEquationApproach
+cd QuadraticEquationApproach
+doxygen dox
+cd html
+classes.html
+```
