@@ -1,5 +1,5 @@
 #the compiler
-CC = gcc
+CC = g++
  
 #flags:
 CFLAGS  = -g -Wall -Wextra -Wpedantic -Wfloat-equal -Werror
