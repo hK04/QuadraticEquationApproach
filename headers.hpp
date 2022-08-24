@@ -1,5 +1,8 @@
 /// \file
 
+#ifndef ALREADY_OPENED
+#define ALREADY_OPENED
+
 ///This variable is the threshold of equality
 const double THRESHOLD = 1e-7;
 
@@ -25,3 +28,4 @@ enum ExitStatus{
    TWO_SOLS      =  2  ///<This is ExitStatus in case of Two Solutions
 };
 
+#endif //ALREADY_OPENED
