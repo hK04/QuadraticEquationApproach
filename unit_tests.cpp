@@ -80,35 +80,36 @@ int test_of_is_equal(int numTest, double x, double y, int right){
 
 int Test(){
     int failed = 0;
+    int number_of_test = 1;
     
     printf("Test of polynomial function\n");
 
-    if (test_of_polynomial_equation(__LINE__, 0,  0,  0, -1,  0,  0) == 0) failed++;
-    if (test_of_polynomial_equation(__LINE__, 1,  2, -3,  2,  1, -3) == 0) failed++;
-    if (test_of_polynomial_equation(__LINE__, 0,  4,  0,  1,  0,  0) == 0) failed++;
-    if (test_of_polynomial_equation(__LINE__, 0,  2, -4,  1,  2,  0) == 0) failed++;
-    if (test_of_polynomial_equation(__LINE__, 0,  0, 13,  0,  0,  0) == 0) failed++;
-    if (test_of_polynomial_equation(__LINE__, 1, -1,  3,  0,  0,  0) == 0) failed++;
-    if (test_of_polynomial_equation(__LINE__, 1,  4,  4,  1, -2,  0) == 0) failed++;
-    if (test_of_polynomial_equation(__LINE__, 4,  4,  1,  1, -0.5,  0) == 0) failed++;
+    if (test_of_polynomial_equation(number_of_test++, 0,  0,  0, -1,  0,  0) == 0) failed++;
+    if (test_of_polynomial_equation(number_of_test++, 1,  2, -3,  2,  1, -3) == 0) failed++;
+    if (test_of_polynomial_equation(number_of_test++, 0,  4,  0,  1,  0,  0) == 0) failed++;
+    if (test_of_polynomial_equation(number_of_test++, 0,  2, -4,  1,  2,  0) == 0) failed++;
+    if (test_of_polynomial_equation(number_of_test++, 0,  0, 13,  0,  0,  0) == 0) failed++;
+    if (test_of_polynomial_equation(number_of_test++, 1, -1,  3,  0,  0,  0) == 0) failed++;
+    if (test_of_polynomial_equation(number_of_test++, 1,  4,  4,  1, -2,  0) == 0) failed++;
+    if (test_of_polynomial_equation(number_of_test++, 4,  4,  1,  1, -0.5,  0) == 0) failed++;
 
     printf("\nTest of linear function\n");
 
-    if (test_of_linear(__LINE__, 6,  6,  -1) == 0) failed++;
-    if (test_of_linear(__LINE__, 0,  0,  -1) == 0) failed++;
-    if (test_of_linear(__LINE__, 8,  -4,  0.5) == 0) failed++;
+    if (test_of_linear(number_of_test++, 6,  6,  -1) == 0) failed++;
+    if (test_of_linear(number_of_test++, 0,  0,  -1) == 0) failed++;
+    if (test_of_linear(number_of_test++, 8,  -4,  0.5) == 0) failed++;
 
     printf("\nTest of quadratic function\n");
 
-    if (test_of_polynomial_equation(__LINE__, 1,  2, -3,  2,  1, -3) == 0) failed++;
-    if (test_of_polynomial_equation(__LINE__, 1, -1,  3,  0,  0,  0) == 0) failed++;
-    if (test_of_polynomial_equation(__LINE__, 1,  4,  4,  1, -2,  0) == 0) failed++;
+    if (test_of_polynomial_equation(number_of_test++, 1,  2, -3,  2,  1, -3) == 0) failed++;
+    if (test_of_polynomial_equation(number_of_test++, 1, -1,  3,  0,  0,  0) == 0) failed++;
+    if (test_of_polynomial_equation(number_of_test++, 1,  4,  4,  1, -2,  0) == 0) failed++;
 
     printf("\nTest of is_equal\n");
 
-    if (test_of_is_equal(__LINE__, 0,  0,  1) == 0) failed++;
-    if (test_of_is_equal(__LINE__, 7,  7,  0) == 0) failed++;
-    if (test_of_is_equal(__LINE__, 8,  9,  1) == 0) failed++;
+    if (test_of_is_equal(number_of_test++, 0,  0,  1) == 0) failed++;
+    if (test_of_is_equal(number_of_test++, 7,  7,  0) == 0) failed++;
+    if (test_of_is_equal(number_of_test++, 8,  9,  1) == 0) failed++;
 
     return failed;
 }
