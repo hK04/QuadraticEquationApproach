@@ -16,6 +16,6 @@ This program meant to solve polymoial equations with form of $ax^2 + bx^2 + c = 
 `unit_tests.hpp` - prototypes of unit_tests 
 
 # To compile:
-open bash -> `g++ main.cpp equation.cpp unit_tests.cpp -o main.o` 
+open bash -> `g++ main.cpp equation.cpp unit_tests.cpp -DDebugMode -o main.o`, `DebugMode = 1` for Debug, `DebugMode = 0` for normal usage
 # To use documentation:
 open bash -> `doxygen dox`, then open some of `.html`
