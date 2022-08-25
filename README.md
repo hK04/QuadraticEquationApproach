@@ -38,6 +38,7 @@ make debug
 
 ```diff
 - [Note] For most accurate debug you may change debug flags to $(DEBUGFLAGS)
++ [Note] Also you may use "make help" in order to gain help with compilation or "make clean" to delete *.d files
 ```
 
 # To use documentation:
@@ -45,7 +46,7 @@ make debug
 ```bash
 git clone https://github.com/hK04/QuadraticEquationApproach
 cd QuadraticEquationApproach
-doxygen dox
+doxygen
 cd html
 classes.html
 ```
