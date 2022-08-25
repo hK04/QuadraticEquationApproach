@@ -47,14 +47,14 @@ void output(roots* root){
             return;
 
         case ONE_SOLS:
-            printf("\x1b[33mThere's one solution\x1b[0m"); 
-            printf("\nSolution is: %lg", root->arr[0]);
+            printf("\x1b[33mThere's one solution\x1b[0m\n"); 
+            printf("Solution is: %lg\n", root->arr[0]);
             return;
 
         case TWO_SOLS:
-            printf("\x1b[32mThere're two solutions\x1b[0m");
+            printf("\x1b[32mThere're two solutions\x1b[0m\n");
             for (int i = 0; i < num_of_solutions; i++){
-                printf("\nSolution %d is: %lg", i + 1, root->arr[i]);
+                printf("Solution %d is: %lg\n", i + 1, root->arr[i]);
             }
             return;
 
@@ -62,7 +62,7 @@ void output(roots* root){
             printf("Something went wrong. Better luck next time\n");
             printf("Number of solutions: %d\n", num_of_solutions);
             for (int i = 0; i < num_of_solutions; i++)
-                printf("\nSolution %d is: %lg", i + 1, root->arr[i]);
+                printf("Solution %d is: %lg\n", i + 1, root->arr[i]);
             return;
     }
 }
