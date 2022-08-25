@@ -35,7 +35,7 @@ make debug
 ```
 
 ```diff
-- Note, that for most accurate debug you may change debug flags to $(DEBUGFLAGS)
+- [Note] For most accurate debug you may change debug flags to $(DEBUGFLAGS)
 ```
 
 # To use documentation:
