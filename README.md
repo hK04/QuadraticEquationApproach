@@ -17,6 +17,8 @@ This program meant to solve polynomial equations with form of $ax^2 + bx^2 + c =
 
 `unit_tests.hpp` - includes prototypes of unit_tests 
 
+`colors.hpp` - includes names of supported colors of output
+
 # To compile WITHOUT debug:
 ```bash
 git clone https://github.com/hK04/QuadraticEquationApproach
