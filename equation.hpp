@@ -6,12 +6,11 @@
 *   @brief function what fixes -0.0000 to 0
 *
 *   @param[in] x is a value of first coefficient 
-*   @param[out] x if x != -0.0000
-*   @param[out] 0 if x == -0.0000
+*   @return x if x != -0.0000, 0 if x == -0.0000
 *
 */
 
-double minus_zero(double x);
+double minus_zero_to_zero(const double x);
 
 /**
 *   @brief This function allows us to set values of a, b and c of ax^2 + bx + c
@@ -38,12 +37,11 @@ void output(roots* root);
 *
 *   @param[in] x is a first value
 *   @param[in] y is a second value
-*   @param[out] 1 - values are nearly equal
-*   @param[out] 0 - values are not nearly equal
+*   @return 1 if values are nearly equal, 0 if values are not nearly equal
 *
 */
 
-int is_equal(double x, double y);
+int is_equal(const double x, const double y);
 
 /**
 *   @brief function what solves the equation in form ax^2 + bx + c = 0
@@ -78,5 +76,4 @@ void solve_linear_equation(double b, double c, roots* root);
 *
 */
 
-void solve_polynomial_equation(double a, double b, double c, roots* root);
-
+void solve_polynomial_equation(const double a, const double b, const double c, roots* root);

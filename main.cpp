@@ -19,23 +19,54 @@
 */
 
 /**
+*   @page compiling How to compile?
+*   @section comp1 To compile without debug:
+*
+*   git clone https://github.com/hK04/QuadraticEquationApproach
+*
+*   cd QuadraticEquationApproach
+*
+*   make
+*
+*   ./main # executable file
+*
+*   @section comp2 To compile with debug:
+*
+*   git clone https://github.com/hK04/QuadraticEquationApproach
+*
+*   cd QuadraticEquationApproach
+*
+*   make debug
+*
+*   ./main # executable file
+*/
+
+/**
 *   @page Downloading Where to download?
 *   You may download program on my Github
 *   <a href="https://github.com/hK04/QuadraticEquationApproach">->Github</a> 
 */
 
 #include "equation.hpp"
+#include "unit_tests.hpp"
 
 #include <math.h>
 
 int main(){
-    double a, b, c;
-    a = b = c = NAN;
-    roots root;
 
+#if DebugMode == 1
+
+    run_test();
+#else
+
+    double a = NAN, b = NAN, c = NAN;
+    roots root;
+    
     input(&a, &b, &c); //a*x^2 + b*x + c
     solve_polynomial_equation(a, b, c, &root);
     output(&root);
+
+#endif //DebugMode
 
     return 0;
 }

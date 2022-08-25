@@ -1,17 +1,49 @@
 # QuadraticEquationApproach
-First approach to developing at University
+[![](https://img.shields.io/badge/github-blue?style=for-the-badge)](https://github.com/hK04/QuadraticEquationApproach/tree/unit-tests)
 
-This program meant to solve polymoial equations with form of $ax^2 + bx^2 + c = 0$
+First approach to developing at MIPT 
 
-`main.cpp` - C program that solves the equation 
+This program meant to solve polynomial equations with form of $ax^2 + bx^2 + c = 0$
+
+`main.cpp` - main file of solution. Where you choose to compile with debug or release modes 
 
 `equation.cpp` - includes functions of input, output, finding of discriminant and solving the equation
 
-`equation.hpp` - prototypes of functions
+`equation.hpp` - includes prototypes of functions
 
 `headers.hpp` - includes structures and constants
 
-# To compile:
-open bash -> `g++ main.cpp equation.cpp -o main.o`
+`unit_tests.cpp` - includes functions meant to test all methods in `equation.cpp`
+
+`unit_tests.hpp` - includes prototypes of unit_tests 
+
+# To compile WITHOUT debug:
+```bash
+git clone https://github.com/hK04/QuadraticEquationApproach
+cd QuadraticEquationApproach
+make
+./main # executable file
+```
+
+# To compile WITH debug:
+
+```bash
+git clone https://github.com/hK04/QuadraticEquationApproach
+cd QuadraticEquationApproach
+make debug
+./main # executable file
+```
+
+```diff
+- [Note] For most accurate debug you may change debug flags to $(DEBUGFLAGS)
+```
+
 # To use documentation:
-open bash -> `doxygen dox`, then open some of `.html`
+
+```bash
+git clone https://github.com/hK04/QuadraticEquationApproach
+cd QuadraticEquationApproach
+doxygen dox
+cd html
+classes.html
+```

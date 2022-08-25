@@ -1,7 +1,10 @@
 /// \file
 
-///This variable is the threshold of equality
-const double THRESHOLD = 1e-7;
+#ifndef ALREADY_OPENED
+#define ALREADY_OPENED
+
+///This variable is the delta of equality
+const double DELTA = 1e-7;
 
 /** \struct roots
 *   @brief  Structure with varible `num_of_roots` and array of solutions
@@ -9,8 +12,8 @@ const double THRESHOLD = 1e-7;
 */
 
 typedef struct{
-    int num_of_roots;
-    double arr[2];
+    int num_of_roots = 0;
+    double arr[2] = {0};
 } roots;
 
 /** \enum ExitStatus 
@@ -25,3 +28,4 @@ enum ExitStatus{
    TWO_SOLS      =  2  ///<This is ExitStatus in case of Two Solutions
 };
 
+#endif //ALREADY_OPENED
