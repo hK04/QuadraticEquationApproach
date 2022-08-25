@@ -5,6 +5,7 @@
 #include <assert.h>
 
 #include "headers.hpp"
+#include "colors.hpp"
 
 int is_equal(const double x, const double y){
     assert(isfinite(x) && "Coefficient isnt finite!");
@@ -39,20 +40,28 @@ void output(roots* root){
 
     switch (num_of_solutions){
         case INFINITE_SOLS:
-            printf("\x1b[31mInfinite number of solutions\x1b[0m\n");
+            printf("%s", RED);
+            printf("Infinite number of solutions\n");
+            printf("%s", BLACK);
             return;
 
         case ZERO_SOLS:
-            printf("\x1b[31mNo solution\x1b[0m\n");
+            printf("%s", RED);
+            printf("No solution\n");
+            printf("%s", BLACK);
             return;
 
         case ONE_SOLS:
-            printf("\x1b[33mThere's one solution\x1b[0m\n"); 
+            printf("%s", YELLOW);
+            printf("There's one solution\n");
+            printf("%s", BLACK); 
             printf("Solution is: %lg\n", root->arr[0]);
             return;
 
         case TWO_SOLS:
-            printf("\x1b[32mThere're two solutions\x1b[0m\n");
+            printf("%s", GREEN);
+            printf("There're two solutions\n");
+            printf("%s", BLACK); 
             for (int i = 0; i < num_of_solutions; i++){
                 printf("Solution %d is: %lg\n", i + 1, root->arr[i]);
             }

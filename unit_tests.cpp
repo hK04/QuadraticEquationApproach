@@ -4,6 +4,7 @@
 
 #include "unit_tests.hpp"
 #include "equation.hpp"
+#include "colors.hpp"
 
 int test_of_polynomial_equation(int numTest, double a, double b, double c, int num_of_roots, double x_1_correct, double x_2_correct){
     assert(isfinite(a) && "Coefficient isnt finite!");
@@ -17,19 +18,25 @@ int test_of_polynomial_equation(int numTest, double a, double b, double c, int n
     solve_polynomial_equation(a, b, c, &root);
 
     if (root.num_of_roots != num_of_roots){
-        printf("\x1b[31mTest %d failed: a = %lg, b = %lg, c = %lg; Solutions: %lg %lg - Should be: %lg %lg\x1b[0m\n", 
+        printf("%s", RED);
+        printf("Test %d failed: a = %lg, b = %lg, c = %lg; Solutions: %lg %lg - Should be: %lg %lg\n", 
             numTest, a, b, c, root.arr[0], root.arr[1], x_1_correct, x_2_correct);
+        printf("%s", BLACK);
 
         return 0;
     } else {
         if (!is_equal(root.arr[0], x_1_correct) || !is_equal(root.arr[1], x_2_correct)){
-            printf("\x1b[31mTest %d failed: a = %lg, b = %lg, c = %lg; Solutions: %lg %lg - Should be: %lg %lg\x1b[0m\n", 
+            printf("%s", RED);
+            printf("Test %d failed: a = %lg, b = %lg, c = %lg; Solutions: %lg %lg - Should be: %lg %lg\n", 
                 numTest, a, b, c, root.arr[0], root.arr[1], x_1_correct, x_2_correct);
+            printf("%s", BLACK);
 
             return 0;
         } else {
-            printf("\x1b[32mTest %d is succed\x1b[0m\n", numTest);
-            
+            printf("%s", GREEN);
+            printf("Test %d is succed\n", numTest);
+            printf("%s", BLACK);
+
             return 1;
         }
     }
@@ -44,18 +51,25 @@ int test_of_linear(int numTest, double b, double c, double x_correct){
     solve_linear_equation(b, c, &root);
 
     if (root.num_of_roots != 1){
-        printf("\x1b[31mTest %d failed: b = %lg, c = %lg; Solution: %lg - Should be: %lg\x1b[0m\n", 
+        printf("%s", RED);
+        printf("Test %d failed: b = %lg, c = %lg; Solution: %lg - Should be: %lg\n", 
             numTest, b, c, root.arr[0], x_correct);
+        printf("%s", BLACK);
 
         return 0;
     } else {
         if (!is_equal(root.arr[0], x_correct)){
-            printf("\x1b[31mTest %d failed: b = %lg, c = %lg; Solution: %lg - Should be: %lg\x1b[0m\n", 
+            printf("%s", RED);
+            printf("Test %d failed: b = %lg, c = %lg; Solution: %lg - Should be: %lg\n", 
                 numTest, b, c, root.arr[0], x_correct);
+            printf("%s", BLACK);
 
             return 0;
         } else {
-            printf("\x1b[32mTest %d is succed\x1b[0m\n", numTest);
+            printf("%s", GREEN);
+            printf("Test %d is succed\n", numTest);
+            printf("%s", BLACK);
+
             return 1;
         }
     }
@@ -76,13 +90,16 @@ int test_of_is_equal(int numTest, double x, double y, int correct){
     equality = is_equal(x, y);
     
     if (equality == correct){
-        printf("\x1b[32mTest %d is succed\n", numTest);
+        printf("%s", RED);
+        printf("Test %d is succed\n", numTest);
+        printf("%s", BLACK);
 
         return 1;
     } else {
-
-        printf("\x1b[31mTest %d failed: x = %lg, y = %lg; Solution: %d - Should be: %d\x1b[0m\n", 
+        printf("%s", GREEN);
+        printf("Test %d failed: x = %lg, y = %lg; Solution: %d - Should be: %d\n", 
             numTest, x, y, equality, correct);
+        printf("%s", BLACK);
         
         return 0;
     }
@@ -93,7 +110,9 @@ int run_test(){
     int failed = 0;
     int number_of_test = 1;
     
+    printf(PURPLE);
     printf("Test of polynomial function\n");
+    printf(BLACK);
 
     if (test_of_polynomial_equation(number_of_test++, 0,  0,  0, -1,  0,   0) == 0) failed++;
     if (test_of_polynomial_equation(number_of_test++, 1,  2, -3,  2,  1,  -3) == 0) failed++;
@@ -105,19 +124,25 @@ int run_test(){
     if (test_of_polynomial_equation(number_of_test++, 4,  4,  1,  1, -0.5, 0) == 0) failed++;
     if (test_of_polynomial_equation(number_of_test++,0.0000000000002, 0.0000000000004, 0.0000000000002, 1, -1, 0) == 0) failed++;
 
+    printf(PURPLE);
     printf("\nTest of linear function\n");
+    printf(BLACK);
 
     if (test_of_linear(number_of_test++, 6,   6,   -1) == 0) failed++;
     if (test_of_linear(number_of_test++, 0,   0,   -1) == 0) failed++;
     if (test_of_linear(number_of_test++, 8,  -4,  0.5) == 0) failed++;
 
+    printf(PURPLE);
     printf("\nTest of quadratic function\n");
+    printf(BLACK);
 
     if (test_of_polynomial_equation(number_of_test++, 1,  2, -3,  2,  1, -3) == 0) failed++;
     if (test_of_polynomial_equation(number_of_test++, 1, -1,  3,  0,  0,  0) == 0) failed++;
     if (test_of_polynomial_equation(number_of_test++, 1,  4,  4,  1, -2,  0) == 0) failed++;
 
+    printf(PURPLE);
     printf("\nTest of is_equal\n");
+    printf(BLACK);
 
     if (test_of_is_equal(number_of_test++, 0,  0,  1) == 0) failed++;
     if (test_of_is_equal(number_of_test++, 7,  7,  0) == 0) failed++;
