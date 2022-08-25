@@ -15,3 +15,8 @@ all:
 	$(CC) $(SOURCES) $(CFLAGS) -DDebugMode=0 -MD -o $(EXECUTABLE) -lm
 debug:
 	$(CC) $(SOURCES) $(CFLAGS) -DDebugMode=1 -MD -o $(EXECUTABLE) -lm
+clean:
+	rm *.d
+help:
+	@echo "1. To compile WITHOUT DebugMode use make"
+	@echo "2. To compile WITH DebugMode use make debug"

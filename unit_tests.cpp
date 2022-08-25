@@ -105,7 +105,6 @@ int test_of_is_equal(int numTest, double x, double y, int correct){
     }
 }
 
-
 int run_test(){
     int failed = 0;
     int number_of_test = 1;

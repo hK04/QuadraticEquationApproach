@@ -7,9 +7,7 @@
 *
 *   @param[in] x is a value of first coefficient 
 *   @return x if x != -0.0000, 0 if x == -0.0000
-*
 */
-
 double minus_zero_to_zero(const double x);
 
 /**
@@ -18,18 +16,14 @@ double minus_zero_to_zero(const double x);
 *   @param[in] a is a value of first coefficient 
 *   @param[in] b is a value of second coefficient 
 *   @param[in] c is a value of third coefficient 
-*
 */
-
 void input(double* a, double* b, double* c);
 
 /**
 *   @brief This function allows us to print solution of equation in console
 *
 *   @param[in] root is a structure of solution
-*
 */
-
 void output(roots* root);
 
 /**
@@ -38,9 +32,7 @@ void output(roots* root);
 *   @param[in] x is a first value
 *   @param[in] y is a second value
 *   @return 1 if values are nearly equal, 0 if values are not nearly equal
-*
 */
-
 int is_equal(const double x, const double y);
 
 /**
@@ -50,9 +42,7 @@ int is_equal(const double x, const double y);
 *   @param[in] b is a value of second coefficient 
 *   @param[in] c is a value of third coefficient
 *   @param[in] root is a structure of solution
-*
 */
-
 void solve_quadratic_equation(double a, double b, double c, roots* root);
 
 /**
@@ -61,9 +51,7 @@ void solve_quadratic_equation(double a, double b, double c, roots* root);
 *   @param[in] b is a value of first coefficient 
 *   @param[in] c is a value of second coefficient
 *   @param[in] root is a structure of solution
-*
 */
-
 void solve_linear_equation(double b, double c, roots* root);
 
 /**
@@ -73,7 +61,5 @@ void solve_linear_equation(double b, double c, roots* root);
 *   @param[in] b is a value of second coefficient 
 *   @param[in] c is a value of third coefficient
 *   @param[in] root is a structure of solution
-*
 */
-
 void solve_polynomial_equation(const double a, const double b, const double c, roots* root);

@@ -12,7 +12,6 @@ int is_equal(const double x, const double y){
     assert(isfinite(y) && "Coefficient isnt finite!"); 
 
     return fabs(x - y) <= DELTA;
-
 }
 
 double minus_zero_to_zero(const double x){
@@ -24,7 +23,7 @@ double minus_zero_to_zero(const double x){
         return x;
 }
 
-void input(double* a, double* b, double* c){
+void input(double *const a, double *const b, double *const c){
     assert(a != NULL && "Pointer to value is NULL");
     assert(b != NULL && "Pointer to value is NULL");
     assert(c != NULL && "Pointer to value is NULL");
