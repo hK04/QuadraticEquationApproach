@@ -1,5 +1,5 @@
 # QuadraticEquationApproach
-[![](https://img.shields.io/badge/github-blue?style=for-the-badge)](https://github.com/hK04/QuadraticEquationApproach/tree/unit-tests)
+[![](https://img.shields.io/badge/github-blue?style=for-the-badge)](https://github.com/hK04/QuadraticEquationApproach)
 
 First approach to developing at MIPT 
 
