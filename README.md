@@ -1,4 +1,6 @@
 # QuadraticEquationApproach
+[![](https://img.shields.io/badge/github-blue?style=for-the-badge)](https://github.com/hK04/QuadraticEquationApproach/tree/unit-tests)
+
 First approach to developing at MIPT 
 
 This program meant to solve polynomial equations with form of $ax^2 + bx^2 + c = 0$
@@ -30,6 +32,10 @@ git clone https://github.com/hK04/QuadraticEquationApproach
 cd QuadraticEquationApproach
 make debug
 ./main # executable file
+```
+
+```diff
+- Note, that for most accurate debug you may change debug flags to $(DEBUGFLAGS)
 ```
 
 # To use documentation:
