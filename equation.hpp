@@ -77,4 +77,3 @@ void solve_linear_equation(double b, double c, roots* root);
 */
 
 void solve_polynomial_equation(const double a, const double b, const double c, roots* root);
-
