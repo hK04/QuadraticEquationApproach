@@ -6,8 +6,7 @@
 *   @brief function what fixes -0.0000 to 0
 *
 *   @param[in] x is a value of first coefficient 
-*   @param[out] x if x != -0.0000
-*   @param[out] 0 if x == -0.0000
+*   @return x if x != -0.0000, 0 if x == -0.0000
 *
 */
 
@@ -38,10 +37,7 @@ void output(roots* root);
 *
 *   @param[in] x is a first value
 *   @param[in] y is a second value
-*   @param[out] 1 - values are nearly equal
-*   @param[out] 0 - values are not nearly equal
-*
-*   @return description of the return value
+*   @return 1 if values are nearly equal, 0 if values are not nearly equal
 *
 */
 
