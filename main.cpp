@@ -1,72 +1,51 @@
-/// \file
+#include <stdio.h>
+#include <stdlib.h>
 
-/** 
-*   @file main.cpp
-*   @mainpage Quadratic Equation Documentation
-*   @section desc Description:
-*   This program was written as first task at MIPT
-*
-*   @section download Downloading link:
-*   <a href="https://github.com/hK04/QuadraticEquationApproach">->Github</a> 
-*   @author Anoshin. M aka hK04
-*   @brief Program meant to solve quadratic equations given in form of  \f$ax^2 + bx + c = 0\f$ 
-*   
-*/
+#include "strings.hpp"
+#include "headers.hpp"
 
-/**
-*   @page solution How to solve equation?
-*   To solve the quation via this program you will need to download repository from github and use `main.cpp`
-*/
+int main(void){
+    const char Slaves[] = "A moy boychick";
+    char based[80];
+    char cringe[40] = { 0 };
+    char porridge[20];
+    char gigachad[20];
+    char GachiString[10];
+    FILE* AssFile;
+    AssFile = fopen("MyTexT.txt", "r");
 
-/**
-*   @page compiling How to compile?
-*   @section comp1 To compile without debug:
-*
-*   git clone https://github.com/hK04/QuadraticEquationApproach
-*
-*   cd QuadraticEquationApproach
-*
-*   make
-*
-*   ./main # executable file
-*
-*   @section comp2 To compile with debug:
-*
-*   git clone https://github.com/hK04/QuadraticEquationApproach
-*
-*   cd QuadraticEquationApproach
-*
-*   make debug
-*
-*   ./main # executable file
-*/
+    //Test Section
+    puts(Slaves);//->
+    print_int_output_of_test(strlen("A moy boychick"));
+    strcpy(cringe, Slaves);//->
+    puts(cringe);
+    strncpy(cringe, Slaves, 5);//->
+    puts(cringe);
 
-/**
-*   @page Downloading Where to download?
-*   You may download program on my Github
-*   <a href="https://github.com/hK04/QuadraticEquationApproach">->Github</a> 
-*/
+    strcpy(based, "these "); //example taken from original documentation 
+    strcat(based, "strings "); //example taken from original documentation 
+    strcat(based, "are "); //example taken from original documentation 
+    strcat(based, "concatenated."); //example taken from original documentation 
+    puts(based); //->
+    strcpy(porridge,"To be "); //example taken from original documentation 
+    strcpy(gigachad,"or not to be"); //example taken from original documentation 
+    strncat(porridge, gigachad, 6); //example taken from original documentation 
+    puts(porridge); //->
 
-#include "equation.hpp"
-#include "unit_tests.hpp"
-
-#include <math.h>
-
-int main(){
-
-#if DebugMode == 1
-
-    run_test();
-#else
-
-    double a = NAN, b = NAN, c = NAN;
-    roots root;
+    print_string_output_of_test(fgets(GachiString, 10, AssFile)); //example taken from original documentation 
+    fclose(AssFile); //example taken from original documentation 
     
-    input(&a, &b, &c); //a*x^2 + b*x + c
-    solve_polynomial_equation(a, b, c, &root);
-    output(&root);
+    print_char_pointer_output_of_test(strchr(GachiString, 'Y'));
+    //zero is equal
+    //1 for str1[i] > str2[i]
+    //-1 for str1[i] < str2[i]
+    print_int_output_of_test(strcmp("BASED", "BASED"));
+    print_int_output_of_test(strcmp("CRINGE", "BASED"));
+    print_int_output_of_test(strcmp("BASED", "CRINGE"));
 
-#endif //DebugMode
-
-    return 0;
+    char* CringedString = strdup("Really Crindged String");
+    puts(CringedString); //->
+    free(CringedString); //necessity of making pointer free after usage taken from documentation
+    //(!) to many leaks..... nearly wiki leaks website itself ))))
+    return 0;  
 }
