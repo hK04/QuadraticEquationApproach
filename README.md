@@ -1,7 +1,7 @@
 # QuadraticEquationApproach
 [![](https://img.shields.io/badge/github-blue?style=for-the-badge)](https://github.com/hK04/QuadraticEquationApproach)
 
-First approach to developing at MIPT 
+First approach to developing at MIPT, Fall of 2022
 
 This program meant to solve polynomial equations with form of $ax^2 + bx^2 + c = 0$
 
